@@ -1,24 +1,17 @@
 
 function loadData() {
 
-    var $body = $('body');
-    var $wikiElem = $('#wikipedia-links');
-    var $nytHeaderElem = $('#nytimes-header');
-    var $nytElem = $('#nytimes-articles');
-    var $greeting = $('#greeting');
-
-    var $streetStr = $('#street').val();
-    var $cityStr = $('#city').val();
+    let $body = $('body');
+    let $nytHeaderElem = $('#nytimes-header');
+    let $nytElem = $('#nytimes-articles');
+    let $greeting = $('#greeting');
 
     // clear out old data before new request
-    $wikiElem.text("");
     $nytElem.text("");
-
-    // load streetview
-    $body.append('<img class="bgimg" src="http://maps.googleapis.com/maps/api/streetview?size=1200x1200&location=' + $streetStr + $cityStr + '">');
+    $nytHeaderElem.text("");
 
     // Build New York times API ulr 
-    var $apiUrl = 'https://api.nytimes.com/svc/search/v2/artikjhclesearch.json';
+    let $apiUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
     
     // add api key as parameter
     $apiUrl += '?' + $.param({
@@ -33,7 +26,7 @@ function loadData() {
     }).done(function(result) {
         console.log(result);
         
-        $nytHeaderElem.text('New York Times Articles About:' + $cityStr);
+        $nytHeaderElem.text('New York Times Articles About');
         
         var articles = result.response.docs;
         for(var i = 0; i < articles.length; i++) {
@@ -53,4 +46,4 @@ function loadData() {
     return false;
 };
 
-$('#form-container').submit(loadData);
+console.log('hello world');
