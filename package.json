@@ -1,0 +1,13 @@
+{
+  "name": "nytimes-jquery",
+  "version": "1.0.0",
+  "description": "Read the New York Times using Web API & jquery",
+  "main": "index.js",
+  "author": "Mannuel Ferreira",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.1",
+    "webpack": "^1.13.2"
+  }
+}
