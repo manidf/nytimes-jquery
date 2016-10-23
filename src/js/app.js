@@ -10,9 +10,9 @@ function loadData() {
     $nytElem.text("");
     $nytHeaderElem.text("");
 
-    // Build New York times API ulr 
+    // Build New York times API ulr
     let $apiUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
-    
+
     // add api key as parameter
     $apiUrl += '?' + $.param({
         'api-key': '2e69849a8c1f4e76aaad0835e3e179cd',
@@ -25,15 +25,15 @@ function loadData() {
         method: 'GET'
     }).done(function(result) {
         console.log(result);
-        
+
         $nytHeaderElem.text('New York Times Articles About');
-        
+
         var articles = result.response.docs;
         for(var i = 0; i < articles.length; i++) {
             var article = articles[i];
             $nytElem.append('<li class="article">'+
-                '<a href="' + article.web_url + '">' + article.headline.main + '</a>' + 
-                '<p>' + article.snippet + '</p>' + 
+                '<a href="' + article.web_url + '">' + article.headline.main + '</a>' +
+                '<p>' + article.snippet + '</p>' +
                 '<small>' + article.pub_date + '</small>' +
                 '</li>');
         };
@@ -46,4 +46,4 @@ function loadData() {
     return false;
 };
 
-console.log('hello world');
+console.log('APP INIT');
