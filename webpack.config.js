@@ -21,7 +21,11 @@ let config = {
     },
     resolve: {
         root: [SRC, NODE_MODULES, DIST]
-    }
+    },
+	devServer: {
+		contentBase: DIST,
+		hot: true
+	}
 }
 
 module.exports = config;

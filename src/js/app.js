@@ -2,9 +2,9 @@
 function loadData() {
 
     let $body = $('body');
-    let $nytHeaderElem = $('#nytimes-header');
-    let $nytElem = $('#nytimes-articles');
-    let $greeting = $('#greeting');
+    let $nytHeaderElem = $('.nytimes-header');
+    let $nytElem = $('.nytimes-articles');
+    let $greeting = $('.greeting');
 
     // clear out old data before new request
     $nytElem.text("");
@@ -28,9 +28,10 @@ function loadData() {
 
         $nytHeaderElem.text('New York Times Articles About');
 
-        var articles = result.response.docs;
-        for(var i = 0; i < articles.length; i++) {
-            var article = articles[i];
+        let articles = result.response.docs;
+
+		for(let i = 0; i < articles.length; i++) {
+            let article = articles[i];
             $nytElem.append('<li class="article">'+
                 '<a href="' + article.web_url + '">' + article.headline.main + '</a>' +
                 '<p>' + article.snippet + '</p>' +
@@ -43,7 +44,9 @@ function loadData() {
         $nytHeaderElem.text('ERROR: articles could not be loaded');
     });
 
-    return false;
+	console.log('APP INIT');
+
+	return false;
 };
 
-console.log('APP INIT');
+
