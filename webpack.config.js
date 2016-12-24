@@ -8,8 +8,7 @@ let DIST = path.join(__dirname, 'dist'); // set the distribution folder. PRODUCT
 
 let config = {
 	entry: {
-        app: [SRC + '/js/app.js'],
-        vendors: ['jquery']
+        app: [SRC + '/js/app.js']
     },
     output: {
         path: DIST + '/js/',
@@ -32,7 +31,7 @@ let config = {
     devtool: 'inline-source-map',
     module: {
 		loaders: [{
-            test: path.join(__dirname, 'src'),
+            test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery',
 			loaders: ['babel', 'babel-loader']
         }]
     },
