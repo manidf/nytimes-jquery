@@ -1,4 +1,3 @@
-
 function loadData() {
 
     let $body = $('body');
@@ -44,9 +43,11 @@ function loadData() {
         $nytHeaderElem.text('ERROR: articles could not be loaded');
     });
 
-	console.log('APP INIT');
+	console.log('$$$APP INIT');
 
-	return false;
+	// return false;
 };
 
+
+module.exports = loadData;
 
