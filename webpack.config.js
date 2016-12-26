@@ -32,7 +32,7 @@ var config = {
     devtool: 'inline-source-map',
     module: {
 		loaders: [{
-            test: /\.(js|jsx)$/,
+            test: /\.(js)$/,
             exclude: /node_modules/,
 			loaders: ['babel', 'babel-loader']
         }]
