@@ -23,8 +23,9 @@ function loadData() {
             var article = articles[i];
             $nytElem.append('<li class="article">' +
                 '<a href="' + article.web_url + '" class="article-title">' + article.headline.main + '</a>' +
+				'<date class="article-pub-date">' + article.pub_date + '</date>' +
                 '<p>' + article.snippet + '</p>' +
-            '</li>');
+			'</li>').fadeIn('slow');
         };
 
 		console.log(articles);
