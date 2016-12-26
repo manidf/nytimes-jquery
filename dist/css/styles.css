@@ -1,0 +1,15 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.4/milligram.min.css);
+
+body {
+	font-family: 'Vollkorn', serif;
+}
+
+.article-list {
+	list-style: none;
+}
+
+.article-title {
+	font-weight: bold;
+	font-style: italic;
+	font-size:2em;
+}
