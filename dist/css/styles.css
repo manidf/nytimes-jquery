@@ -1,7 +1,15 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.4/milligram.min.css);
 
 body {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
 	font-family: 'Vollkorn', serif;
+}
+
+.hidden {
+	display: none;
 }
 
 .article-list {
@@ -9,7 +17,9 @@ body {
 }
 
 .article-title {
+	font-family: 'Vollkorn', serif;
 	font-weight: bold;
 	font-style: italic;
-	font-size:2em;
+	font-size: 2em;
+	line-height: 1.2;
 }
