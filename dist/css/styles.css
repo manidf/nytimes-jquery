@@ -42,3 +42,8 @@ a {
 	display: block;
 	font-size: 0.9em;
 }
+
+.button, button, input[type='button'], input[type='reset'], input[type='submit'] {
+	background-color: #333;
+    border: 0.1rem solid #333;
+ }

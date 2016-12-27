@@ -2,7 +2,7 @@ window.$ = window.jQuery = require('jquery');
 var moment = require('moment');
 
 function loadData() {
-	console.log('load data function');
+
     var $body = $('body');
     var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
@@ -17,9 +17,7 @@ function loadData() {
 		'&sort=newest&api-key=2e69849a8c1f4e76aaad0835e3e179cd';
 
 	$.getJSON(nytimesUrl, function (data){
-
         var articles = data.response.docs;
-
         for (var i = 0; i < articles.length; i++) {
             var article = articles[i];
 			var pubDate = moment(article.pub_date).format('MM/DD/YYYY');
@@ -27,11 +25,12 @@ function loadData() {
                 '<a href="' + article.web_url + '" class="article-title">' + article.headline.main + '</a>' +
 				'<date class="article-pub-date">' + pubDate + '</date>' +
                 '<p>' + article.snippet + '</p>' +
-			'</li>').fadeIn('slow');
+			'</li>');
         };
-    }).error(function(e){
+    }).fail(function(e){
         $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
     });
+
 };
 
 $('#form-container').submit(function (e) {
