@@ -17,7 +17,8 @@ var config = {
 	resolve: {
 		root: [SRC, NODE_MODULES, DIST],
         alias: {
-            jquery: NODE_MODULES + '/jquery'
+            jquery: NODE_MODULES + '/jquery',
+			moment: NODE_MODULES + '/moment'
         }
     },
 	plugins: [

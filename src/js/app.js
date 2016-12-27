@@ -1,4 +1,5 @@
 window.$ = window.jQuery = require('jquery');
+var moment = require('moment');
 
 function loadData() {
 	console.log('load data function');
@@ -21,15 +22,13 @@ function loadData() {
 
         for (var i = 0; i < articles.length; i++) {
             var article = articles[i];
+			var pubDate = moment(article.pub_date).format('MM/DD/YYYY');
             $nytElem.append('<li class="article">' +
                 '<a href="' + article.web_url + '" class="article-title">' + article.headline.main + '</a>' +
-				'<date class="article-pub-date">' + article.pub_date + '</date>' +
+				'<date class="article-pub-date">' + pubDate + '</date>' +
                 '<p>' + article.snippet + '</p>' +
 			'</li>').fadeIn('slow');
         };
-
-		console.log(articles);
-
     }).error(function(e){
         $nytHeaderElem.text('New York Times Articles Could Not Be Loaded');
     });
