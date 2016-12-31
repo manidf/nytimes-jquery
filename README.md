@@ -3,6 +3,8 @@
 Using NYTimes open API and jQuery.
 https://developer.nytimes.com/
 
+`DEMO:` [view demo](http://themwebs.me/labs/nytimes-jquery/)
+
 Make calls to the API with search query and returns a list of articles.
 
 In you command line and project root => do this
