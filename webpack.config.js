@@ -1,12 +1,13 @@
 'use strict';
 
-var webpack = require('webpack');
-var path = require('path'); // fixes issue with long relative paths
-var SRC = path.join(__dirname, 'src'); // set the entry point of the app. SOURCE
-var NODE_MODULES = path.join(__dirname, 'node_modules');
-var DIST = path.join(__dirname, 'dist'); // set the distribution folder. PRODUCTION
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path'); // fixes issue with long relative paths
+const SRC = path.join(__dirname, 'src'); // set the entry point of the app. SOURCE
+const NODE_MODULES = path.join(__dirname, 'node_modules');
+const DIST = path.join(__dirname, 'dist'); // set the distribution folder. PRODUCTION
 
-var config = {
+const config = {
 	entry: {
         app: [SRC + '/js/app.js']
     },
@@ -29,6 +30,16 @@ var config = {
         }),
 		// build jquery asset from node_modules to distribution directory for consumption in the app.
         new webpack.optimize.CommonsChunkPlugin('vendors', '/vendors/vendors.js', Infinity),
+		new CopyWebpackPlugin([
+			{
+				from: SRC ,
+				to: DIST
+			}
+		], {
+			ignore: [
+				'*.js'
+			]
+		})
     ],
     devtool: 'inline-source-map',
     module: {
@@ -40,7 +51,10 @@ var config = {
     },
 	devServer: {
 		contentBase: DIST,
-		hot: true
+		hot: true,
+		// This is required for older versions of webpack-dev-server if you use absolute 'to' paths.
+		// The path should be an absolute path to your build destination.
+        outputPath: path.join(__dirname, 'dist')
 	}
 }
 

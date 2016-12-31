@@ -3,8 +3,14 @@
 Using NYTimes open API and jQuery.
 https://developer.nytimes.com/
 
-In you command lineand project root => do this
+Make calls to the API with search query and returns a list of articles.
+
+In you command line and project root => do this
 ## Tab 1: Run App
+```
+$ npm install
+```
+
 ```
 $ npm start
 ```
