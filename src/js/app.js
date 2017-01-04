@@ -11,6 +11,7 @@ function loadData() {
     $nytElem.text("");
 
 	// build the query to API
+	// Be Kind Rewind and get your own API please :-) https://youtu.be/J7C8nHAAs70?t=17s
 	const nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q='
 		+ searchQuery
 		+ '&sort=newest&api-key=2e69849a8c1f4e76aaad0835e3e179cd';
